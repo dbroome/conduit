@@ -1,0 +1,27 @@
+<conduit>
+    <source type="edu.richmond.adminsys.conduit.sources.SqliteSqlStatementSource">
+        <connectString>jdbc:sqlite:testinput/demographics.db</connectString>
+        <rowLimit>0</rowLimit>
+        <query>
+            select last_name, first_name, address, city, state, postal_code from demographics
+        </query>
+    </source>
+    <sink type="edu.richmond.adminsys.conduit.sinks.CSVFileSink">
+        <csvFile>testoutput/demographics.csv</csvFile>
+        <csvFields>
+            <csvField>last_name</csvField>
+            <csvField>first_name</csvField>
+            <csvField>address</csvField>
+            <csvField>city</csvField>
+            <csvField>state</csvField>
+            <csvField>postal_code</csvField>
+        </csvFields>
+    </sink>
+    <monitor type="edu.richmond.adminsys.conduit.monitors.ConsoleMonitor">
+        <dateFormat>MM/dd/yy hh:mm:ss:SS</dateFormat>
+    </monitor>
+    <monitor type="edu.richmond.adminsys.conduit.monitors.LogFileMonitor">
+        <dateFormat>MM/dd/yy hh:mm:ss:SS</dateFormat>
+        <outputFile>testoutput/demographic_export.log</outputFile>
+    </monitor>
+</conduit>
