@@ -8,7 +8,7 @@ Conduit is a Groovy application framework that performs data transformation jobs
 Each transformation job is a single conduit and is described in an XML configuration file. A configuration file consists of a conduit root element with one source child node, one sink child node, and one or more monitor child nodes. When the Conduit application starts it looks for one or more XML configuration files and executes the jobs that they describe.
 
 The Main class is the entry point for the application and is responsible for initializing the source, sink, and monitor components from the information in the XML configuration file and executing the data transformation job. It parses the XML configuration file for the conduit using the XMLSlurper parser and passes the configuration element for each component as a GPathResult object into its setUp method. It then instantiates the message pump and adds each monitor to the list of components that will receive events sent by the sources and sinks. After initializing the source, sink, and montiors it calls the get method from the source component to retrieve a list of rows representing the data from the source. It passes this list into the set method of the sink component which performs a transformation on the data and writes them to the data sink. When the transformation is complete, it calss the tearDown method for each source, sink, and monitor component.
- 
+
 #Operation
 
 Conduit expects the path of its XML configuration file to be passed as the first parameter on the command line:
