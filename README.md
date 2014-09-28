@@ -21,4 +21,4 @@ If Conduit does not find any command line parameters it expects to run in batch 
 
 #Attribution
 
-This project contains sqlite-jdbc-3.7.2.jar, which is SQLite JDBC, developed by [Taro L.Saito] (http://www.xerial.org/leo) licensed under Apache version 2.
+This project contains sqlite-jdbc-3.7.2.jar, which is SQLite JDBC, developed by [Taro L.Saito] (http://www.xerial.org/leo) and is licensed under Apache version 2.
