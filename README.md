@@ -1,6 +1,8 @@
 Conduit
 =======
 
+(see INSTALL.md for environment configuration details)
+
 #Description
 
 Conduit is a Groovy application framework that performs data transformation jobs by reading data from data sources and writing them to data sinks. Data sources and data sinks send messages during this process that are collected by monitors. Data sources are classes that implement the ICSource interface. Data Sinks are classes that implement the ICSink interface. A class that implements the ICMessagePump interface collects events from the sources and sinks and distributes them to one or more monitors, which are classes that implement the ICMonitor interface.
